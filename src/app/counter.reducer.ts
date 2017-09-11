@@ -10,7 +10,7 @@ export const CounterReducer = (state: number = 0, action: Action)=>{
     case PLUS:
       return state + (<PlusAction>action).payload;
     case RESET:
-      return state + (<PlusAction>action).payload;
+      return 0;
     default:
       return state;
   }
