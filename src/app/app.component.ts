@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { INCREMENT, DECREMENT, RESET } from './counter.actions';
+import * as CouterAction from './counter.actions';
 import { AppState } from './app.reducer';
 
 @Component({
@@ -18,15 +18,15 @@ export class AppComponent {
 	}
 
 	increment(){
-		this.store.dispatch({ type: INCREMENT });
+		this.store.dispatch(new CouterAction.IncrementAction());
 	}
 
 	decrement(){
-		this.store.dispatch({ type: DECREMENT });
+		this.store.dispatch(new CouterAction.DecrementAction());
 	}
 
 	reset(){
-		this.store.dispatch({ type: RESET });
+		this.store.dispatch(new CouterAction.ResetAction());
 	}
 
 	private readCounterState(){
